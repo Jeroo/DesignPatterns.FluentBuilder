@@ -7,7 +7,7 @@ namespace DesignPatterns.FluentBuilder
     public class SandwichBuilder
     {
         //Property Sandwich
-        protected Sandwich _sandwich;
+        private readonly Sandwich _sandwich;
 
         // Initialize Object Sandwich
         public Sandwich sandwich
@@ -15,6 +15,11 @@ namespace DesignPatterns.FluentBuilder
             get { return _sandwich; }
         }
 
+        // Create new SandwichBuilder 
+        public static SandwichBuilder CreateNew()
+        {
+            return new SandwichBuilder();
+        }
 
         // Methods builders
         public SandwichBuilder WithMeat() 
