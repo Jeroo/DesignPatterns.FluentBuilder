@@ -6,13 +6,17 @@ namespace DesignPatterns.FluentBuilder
 {
     public class SandwichBuilder
     {
+        //Property Sandwich
         protected Sandwich _sandwich;
 
+        // Initialize Object Sandwich
         public Sandwich sandwich
         {
             get { return _sandwich; }
         }
 
+
+        // Methods builders
         public SandwichBuilder WithMeat() 
         {
             _sandwich.Protein = "Carne";
@@ -30,6 +34,7 @@ namespace DesignPatterns.FluentBuilder
             return this;
         }
 
+        // Create Builder and return this builded
         public Sandwich Build()
         {
             return _sandwich;
