@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DesignPatterns.FluentBuilder
 {
-    public abstract class SandwichBuilder
+    public class SandwichBuilder
     {
         protected Sandwich _sandwich;
 
@@ -13,10 +13,26 @@ namespace DesignPatterns.FluentBuilder
             get { return _sandwich; }
         }
 
-        public abstract void AddBread();
-        public abstract void AddProtein();
-        public abstract void AddCheese();
-        public abstract void AddVeggies();
-        public abstract void AddCondiments();
+        public SandwichBuilder WithMeat() 
+        {
+            _sandwich.Protein = "Carne";
+            return this;
+        }
+        public SandwichBuilder WithCheedar()
+        {
+            _sandwich.Cheese = "Queso Chedar";
+            return this;
+        }
+
+        public SandwichBuilder WithMayoMustard()
+        {
+            _sandwich.Condiments = "Mayonesa, Mostaza";
+            return this;
+        }
+
+        public Sandwich Build()
+        {
+            return _sandwich;
+        }
     }
 }

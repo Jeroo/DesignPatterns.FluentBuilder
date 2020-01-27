@@ -25,5 +25,10 @@ namespace DesignPatterns.FluentBuilder
             Condiments = condiments;
             Cheese = cheese;
         }
+
+        public override string ToString()
+        {
+            return $"Full Sandwicht: pan {Bread}, Veggies: {Veggies}, Protein: {Protein}, Condiments: {Condiments}, Cheese: {Cheese}";
+        }
     }
 }

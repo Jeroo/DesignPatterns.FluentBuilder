@@ -6,7 +6,14 @@ namespace DesignPatterns.FluentBuilder
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var builder = new SandwichBuilder()
+                        .WithCheedar()
+                        .WithMayoMustard()
+                        .WithMeat()
+                        .Build();
+
+            Console.WriteLine($"{builder.ToString()}");
+            Console.ReadKey();
         }
     }
 }
