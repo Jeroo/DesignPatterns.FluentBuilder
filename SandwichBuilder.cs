@@ -34,7 +34,7 @@ namespace DesignPatterns.FluentBuilder
             return this;
         }
 
-        // Create Builder and return this builded
+        // Create Builder and return this entire builder
         public Sandwich Build()
         {
             return _sandwich;
